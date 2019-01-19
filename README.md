@@ -1,5 +1,5 @@
 # android-project-collections
-#with this repository you will learn how to create android application like:
+# With this repository you will learn how to create android application like:
 1. Using Existing Camera 
 2. Google Maps
 3. Recycler View with Custom Data
