@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     RecyclerView recyclerView;
     String title[];
     String image[];
+    String content[];
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -49,12 +50,14 @@ public class MainActivity extends AppCompatActivity {
                 Post[] posts = response.body().getMsg().getResults();
                 image = new String[posts.length];
                 title = new String[posts.length];
+                content = new String[posts.length];
                 for(int i=0;i<posts.length;i++)
                 {
                     image[i] = PostApi.BASE_URL + posts[i].getImage();
                     title[i] = posts[i].getTitle();
+                    content[i] = posts[i].getContent();
                 }
-                recyclerView.setAdapter(new MyAdapter(image,title));
+                recyclerView.setAdapter(new MyAdapter(image,title,content));
 
             }
 
